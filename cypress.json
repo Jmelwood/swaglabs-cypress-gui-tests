@@ -1,0 +1,9 @@
+{
+  "nodeVersion": "system",
+  "watchForFileChanges": false,
+  "fixturesFolder": "test/util",
+  "integrationFolder": "test/specs",
+  "supportFile": false,
+  "testFiles": "**/*.feature",
+  "baseUrl": "https://computer-database.gatling.io/"
+}

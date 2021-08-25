@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "outDir": "./.tsbuild/",
+    "module": "commonjs",
+    "target": "es2018",
+    "types": [
+        "node",
+        "cypress"
+    ],
+    "moduleResolution": "node",
+    "checkJs": true,
+  },
+  "include": ["**/*.ts", "**/*.json"],
+  "exclude": ["node_modules"]
+}
