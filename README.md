@@ -15,4 +15,4 @@ The goal of these tests are purely demonstrative of techniques for using Cypress
 
 1. Clone this repository (`git clone https://github.com/Jmcosel/compdb-cypress-gui-tests.git`)
 2. Navigate to the root of the folder and install the dependencies (`cd compdb-cypress-gui-tests && npm i`)
-3. Run all tests with the following node command: `npx cypress`
+3. Run all tests with the following node command: `npx cypress run`

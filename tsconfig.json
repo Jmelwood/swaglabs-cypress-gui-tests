@@ -9,6 +9,7 @@
     ],
     "moduleResolution": "node",
     "checkJs": true,
+    "esModuleInterop": true
   },
   "include": ["**/*.ts", "**/*.json"],
   "exclude": ["node_modules"]

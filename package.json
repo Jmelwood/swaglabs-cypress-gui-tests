@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "Automated end-to-end GUI tests for the Computers database using Cypress.",
   "scripts": {
-    "cypress": "cypress open",
-    "test": "cypress run"
+    "test:gui": "cypress open",
+    "test:headless": "cypress run"
   },
   "repository": "github:Jmcosel/compdb-cypress-gui-tests",
   "author": "Jeremy Cosel",
@@ -19,10 +19,9 @@
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-cypress": "^2.11.3",
-    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-prettier": "^3.4.1",
     "prettier": "^2.3.2",
-    "ts-node": "^10.2.1",
-    "typescript": "^4.3.5"
+    "typescript": "^4.4.2"
   },
   "cypress-cucumber-preprocessor": {
     "nonGlobalStepDefinitions": true,

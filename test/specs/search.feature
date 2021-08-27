@@ -1,7 +1,7 @@
 Feature: Search Computer Database
 
-  @focus
   Scenario: Search for a computer
     Given I open the main page
-    When I search for computer name "gateway"
-    Then I see a computer named "gateway" in the list
+    When I search for computer name "apple"
+    Then at least one computer should be found
+    And the "1st" computer contains the name "apple" in the list
