@@ -5,5 +5,5 @@
   "integrationFolder": "test/specs",
   "supportFile": false,
   "testFiles": "**/*.feature",
-  "baseUrl": "https://computer-database.gatling.io/"
+  "baseUrl": "https://www.saucedemo.com/"
 }

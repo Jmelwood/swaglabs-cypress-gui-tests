@@ -1,12 +1,12 @@
 {
-  "name": "compdb-cypress-gui-tests",
+  "name": "swaglabs-cypress-gui-tests",
   "version": "1.0.0",
   "description": "Automated end-to-end GUI tests for the Computers database using Cypress.",
   "scripts": {
     "test:gui": "cypress open",
     "test:headless": "cypress run"
   },
-  "repository": "github:Jmcosel/compdb-cypress-gui-tests",
+  "repository": "github:Jmcosel/swaglabs-cypress-gui-tests",
   "author": "Jeremy Cosel",
   "license": "GPL-3.0",
   "homepage": "https://github.com/Jmcosel",
@@ -16,6 +16,7 @@
     "chance": "^1.1.7",
     "cypress": "^8.3.0",
     "cypress-cucumber-preprocessor": "^4.2.0",
+    "dayjs": "^1.10.6",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-cypress": "^2.11.3",
