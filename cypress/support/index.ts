@@ -13,8 +13,16 @@
 // https://on.cypress.io/configuration
 // ***********************************************************
 
-// Import commands.js using ES2015 syntax:
+declare global {
+  const chance: Chance.Chance;
+  namespace NodeJS {
+    interface Global {
+      chance: typeof chance;
+    }
+  }
+}
+
 import './commands';
 
-// Alternatively you can use CommonJS syntax:
-// require('./commands');
+import Chance from 'chance';
+global.chance = new Chance();

@@ -15,6 +15,8 @@ module.exports = {
     chance: 'readonly'
   },
   rules: {
-    'prettier/prettier': 'error'
+    'prettier/prettier': 'error',
+    // Handled by TS, unneeded
+    'no-unused-vars': 'off'
   }
 };

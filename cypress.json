@@ -1,9 +1,9 @@
 {
   "nodeVersion": "system",
   "watchForFileChanges": false,
-  "fixturesFolder": "test/util",
+  "fixturesFolder": "test/fixtures",
   "integrationFolder": "test/specs",
-  "supportFile": false,
   "testFiles": "**/*.feature",
-  "baseUrl": "https://www.saucedemo.com/"
+  "baseUrl": "https://www.saucedemo.com/",
+  "chromeWebSecurity": false
 }
