@@ -1,4 +1,4 @@
-export default abstract class Page {
+export default class GeneralPage {
   name: string;
   selector: string;
 
@@ -13,7 +13,7 @@ export default abstract class Page {
 
   /**
    * Open the class's page.
-   * @param {String} path - Appends the provided text onto the baseUrl.
+   * @param path - Appends the provided text onto the baseUrl.
    */
   open(path: string = '/') {
     cy.visit(path, { failOnStatusCode: false });
@@ -21,9 +21,9 @@ export default abstract class Page {
 
   /**
    * Wait for the class to be (in)visible
-   * @param {Boolean} visibility - Controls whether you wish for the page to be visible or not.
+   * @param visibility - Controls whether you wish for the page to be visible or not.
    */
-  isPageShown(visibility: boolean = true) {
+  waitForPageShown(visibility: boolean = true) {
     return visibility ? this.mainElement.should('be.visible') : this.mainElement.should('not.be.visible');
   }
 }

@@ -2,17 +2,17 @@
 
 ## Summary
 
-Automated end-to-end GUI tests for SauceLabs' ["SwagLabs"](https://saucedemo.com) test website, mainly to play around with a simple [Cypress v8](https://cypress.io) automation framework setup. Cypress is both the test runner and asserter, paired with the [Cucumber](https://cucumber.io) test framework.
+Automated end-to-end GUI tests for SauceLabs' ["SwagLabs"](https://saucedemo.com) test website, mainly to play around with a simple [Cypress](https://cypress.io) automation framework setup. Cypress is both the test runner and asserter, paired with the [Cucumber](https://cucumber.io) test framework.
 
 The goal of these tests are purely demonstrative of techniques for using Cypress with Cucumber, rather than actual testing of the chosen dummy/unfinished website.
 
 ## Prerequisites
 
-- Google Chrome (last tested with version 92)
-- Node.js (last tested with version LTS 14.17.5)
+- Google Chrome (last tested with version 118)
+- Node.js (last tested with version LTS 18.18.2)
 
 ## How to run tests
 
 1. Clone this repository (`git clone https://github.com/Jmcosel/swaglabs-cypress-gui-tests.git`)
-2. Navigate to the root of the folder and install the dependencies (`cd swaglabs-cypress-gui-tests && npm i`)
+2. Navigate to the root of the folder and install the dependencies (`cd swaglabs-cypress-gui-tests && yarn`)
 3. Run all tests with the following node command: `npx cypress run`

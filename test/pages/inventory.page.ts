@@ -1,6 +1,6 @@
-import Page from './page';
+import GeneralPage from './general.page.js';
 
-class InventoryPage extends Page {
+class InventoryPage extends GeneralPage {
   constructor() {
     super('Inventory', 'div.inventory_container');
   }
@@ -33,10 +33,6 @@ class InventoryPage extends Page {
     return cy.get('div.inventory_item_price');
   }
 
-  get robotImage() {
-    return cy.get('img.footer_robot');
-  }
-
   inventoryItemLink(itemName: string) {
     return cy.get(`div=${itemName}`);
   }
@@ -46,19 +42,21 @@ class InventoryPage extends Page {
   }
 
   addToCartButton(itemId: string) {
-    return cy.get(`#add-to-cart-${itemId}`);
+    return cy.get(`[data-test="add-to-cart-${itemId}"]`);
   }
 
   removeFromCartButton(itemId: string) {
-    return cy.get(`#remove-${itemId}`);
+    return cy.get(`[data-test="remove-${itemId}"]`);
   }
 
   /**
    * Picks an item randomly, to keep test data dynamic.
-   * @returns {Object} the chosen item's name, description, and price
+   * @returns The chosen item's name, description, and price
    */
-  pickItemRandomly(): object {
-    let itemNames: String[], itemDescriptions: String[], itemPrices: String[];
+  pickItemRandomly() {
+    const itemNames: string[] = [],
+      itemDescriptions: string[] = [],
+      itemPrices: string[] = [];
     this.inventoryItemNames.each((item) => {
       itemNames.push(item.text());
     });
@@ -68,8 +66,8 @@ class InventoryPage extends Page {
     this.inventoryItemPrices.each((item) => {
       itemPrices.push(item.text());
     });
-    let choice = chance.integer({ min: 0, max: itemNames.length - 1 });
-    let randomItem = {
+    const choice = chance.integer({ min: 0, max: itemNames.length - 1 });
+    const randomItem = {
       name: itemNames[choice],
       description: itemDescriptions[choice],
       price: itemPrices[choice]
@@ -79,7 +77,7 @@ class InventoryPage extends Page {
 
   /**
    * Adds the specified item name to the shopping cart.
-   * @param {String} itemId
+   * @param itemId The item's id
    */
   clickAddToCart(itemId: string) {
     this.addToCartButton(itemId).click();
@@ -87,7 +85,7 @@ class InventoryPage extends Page {
 
   /**
    * Removes the specified item name from the shopping cart.
-   * @param {String} itemId
+   * @param itemId The item's id
    */
   clickRemoveFromCart(itemId: string) {
     this.removeFromCartButton(itemId).click();

@@ -1,13 +1,22 @@
-import { Given, When, Then } from 'cypress-cucumber-preprocessor/steps';
-import LoginPage from '../../pages/login.page';
-import InventoryPage from '../../pages/inventory.page';
+import { Given, When, Then } from '@badeball/cypress-cucumber-preprocessor';
+import LoginPage from '../../pages/login.page.js';
+import InventoryPage from '../../pages/inventory.page.js';
+import type { User } from '../../fixtures/users.js';
+import Users from '../../fixtures/users.js';
 
 // Ensures that no prior authentication in a cookie exists
 Given('I am a new visitor', () => {
   cy.clearCookies();
 });
 
-When('I navigate to the {string} page', (pageName) => {
+// A combination of the login steps above/below
+Given('I am logged in with the {string} account', (loginType: string) => {
+  cy.clearCookies();
+  LoginPage.open();
+  LoginPage.login(Users[loginType] as User);
+});
+
+When('I navigate to the {string} page', (pageName: string) => {
   switch (pageName) {
     case 'Login':
       LoginPage.open();
@@ -21,16 +30,16 @@ When('I navigate to the {string} page', (pageName) => {
   }
 });
 
-Then('I will see the {string} page', (pageName) => {
+Then('I will see the {string} page', (pageName: string) => {
   switch (pageName) {
     case 'Login':
-      LoginPage.isPageShown();
+      LoginPage.waitForPageShown();
       break;
     case 'Inventory':
-      InventoryPage.isPageShown();
+      InventoryPage.waitForPageShown();
       break;
     default:
-      LoginPage.isPageShown();
+      LoginPage.waitForPageShown();
       break;
   }
 });

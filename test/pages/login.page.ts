@@ -1,7 +1,7 @@
-import { User } from '../fixtures/users';
-import Page from './page';
+import GeneralPage from './general.page.js';
+import type { User } from '../fixtures/users.js';
 
-class LoginPage extends Page {
+class LoginPage extends GeneralPage {
   constructor() {
     super('Login', 'div.login_wrapper');
   }
@@ -19,11 +19,7 @@ class LoginPage extends Page {
   }
 
   get submitButton() {
-    return cy.get('input#login-button');
-  }
-
-  get robotImage() {
-    return cy.get('div.bot_column');
+    return cy.get('input[data-test="login-button"]');
   }
 
   get errorMsg() {
@@ -36,7 +32,7 @@ class LoginPage extends Page {
 
   /**
    * Handles the login functionality.
-   * @param {User} user
+   * @param user A fixture object containing the username/password credentials
    */
   login(user: User) {
     this.usernameField.type(user.username);

@@ -13,15 +13,6 @@
 // https://on.cypress.io/configuration
 // ***********************************************************
 
-declare global {
-  const chance: Chance.Chance;
-  namespace NodeJS {
-    interface Global {
-      chance: typeof chance;
-    }
-  }
-}
-
 import './commands';
 
 import Chance from 'chance';
