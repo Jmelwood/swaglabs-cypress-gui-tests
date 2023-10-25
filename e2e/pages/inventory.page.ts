@@ -50,29 +50,13 @@ class InventoryPage extends GeneralPage {
   }
 
   /**
-   * Picks an item randomly, to keep test data dynamic.
-   * @returns The chosen item's name, description, and price
+   * Picks an item randomly from the list of inventory items, to keep test data dynamic.
+   * @returns A random element from the inventory items
    */
   pickItemRandomly() {
-    const itemNames: string[] = [],
-      itemDescriptions: string[] = [],
-      itemPrices: string[] = [];
-    this.inventoryItemNames.each((item) => {
-      itemNames.push(item.text());
+    return this.inventoryItems.then(($items) => {
+      return Cypress._.sample($items.toArray());
     });
-    this.inventoryItemDescriptions.each((item) => {
-      itemDescriptions.push(item.text());
-    });
-    this.inventoryItemPrices.each((item) => {
-      itemPrices.push(item.text());
-    });
-    const choice = chance.integer({ min: 0, max: itemNames.length - 1 });
-    const randomItem = {
-      name: itemNames[choice],
-      description: itemDescriptions[choice],
-      price: itemPrices[choice]
-    };
-    return randomItem;
   }
 
   /**

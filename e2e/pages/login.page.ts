@@ -1,5 +1,5 @@
 import GeneralPage from './general.page.js';
-import type { User } from '../fixtures/users.js';
+import type { User } from '../../cypress/fixtures/users.js';
 
 class LoginPage extends GeneralPage {
   constructor() {

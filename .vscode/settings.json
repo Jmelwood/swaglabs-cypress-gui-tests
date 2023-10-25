@@ -1,5 +1,3 @@
 {
-  "cucumberautocomplete.steps": [
-    "test/specs/**/*.steps.ts"
-  ]
+  "cucumberautocomplete.steps": ["e2e/specs/**/*.steps.ts"]
 }

@@ -1,6 +1,7 @@
 {
   "name": "swaglabs-cypress-gui-tests",
   "version": "1.0.0",
+  "type": "module",
   "description": "Automated end-to-end GUI tests for the SwagLabs website using Cypress.",
   "scripts": {
     "format": "prettier --write .",
@@ -13,18 +14,15 @@
   "license": "GPL-3.0",
   "homepage": "https://github.com/Jmcosel",
   "devDependencies": {
-    "@badeball/cypress-cucumber-preprocessor": "^18.0.6",
     "@bahmutov/cypress-esbuild-preprocessor": "^2.2.0",
-    "@types/chance": "^1.1.4",
     "@types/eslint": "^8.44.2",
     "@types/eslint-plugin-prettier": "^3.1.0",
     "@types/mocha": "^10.0.1",
     "@types/prettier": "^3.0.0",
     "@typescript-eslint/eslint-plugin": "^6.7.0",
     "@typescript-eslint/parser": "^6.7.0",
-    "chance": "^1.1.11",
     "cypress": "^13.3.2",
-    "dayjs": "^1.10.7",
+    "esbuild": "^0.19.5",
     "eslint": "^8.49.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-define-config": "^1.23.0",
@@ -39,8 +37,5 @@
   "engines": {
     "node": ">=16.0.0",
     "npm": ">=6.0.0"
-  },
-  "cypress-cucumber-preprocessor": {
-    "stepDefinitions": "test/specs"
   }
 }

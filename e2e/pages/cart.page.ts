@@ -6,6 +6,10 @@ class CartPage extends GeneralPage {
   }
 
   get inventoryItems() {
+    return cy.get('div.cart_item');
+  }
+
+  get inventoryItemNames() {
     return cy.get('div.inventory_item_name');
   }
 

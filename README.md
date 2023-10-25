@@ -2,9 +2,7 @@
 
 ## Summary
 
-Automated end-to-end GUI tests for SauceLabs' ["SwagLabs"](https://saucedemo.com) test website, mainly to play around with a simple [Cypress](https://cypress.io) automation framework setup. Cypress is both the test runner and asserter, paired with the [Cucumber](https://cucumber.io) test framework.
-
-The goal of these tests are purely demonstrative of techniques for using Cypress with Cucumber, rather than actual testing of the chosen dummy/unfinished website.
+Automated end-to-end GUI tests for SauceLabs' ["SwagLabs"](https://saucedemo.com) test website, mainly to play around with a simple [Cypress](https://cypress.io) automation framework setup. Cypress is both the test runner and asserter, paired with the [Mocha](https://mochajs.org) test framework.
 
 ## Prerequisites
 
@@ -15,4 +13,4 @@ The goal of these tests are purely demonstrative of techniques for using Cypress
 
 1. Clone this repository (`git clone https://github.com/Jmcosel/swaglabs-cypress-gui-tests.git`)
 2. Navigate to the root of the folder and install the dependencies (`cd swaglabs-cypress-gui-tests && yarn`)
-3. Run all tests with the following node command: `npx cypress run`
+3. Run all tests with the following command: `yarn test:headless`

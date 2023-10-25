@@ -14,10 +14,6 @@ module.exports = defineConfig({
     node: true,
     mocha: true
   },
-  globals: {
-    assert: 'readonly',
-    chance: 'readonly'
-  },
   plugins: ['@typescript-eslint', 'prettier', 'cypress', 'jsdoc'],
   extends: [
     'eslint:recommended',
@@ -35,6 +31,7 @@ module.exports = defineConfig({
   },
   rules: {
     'prefer-template': 'error',
+    'no-debugger': 'warn',
     '@typescript-eslint/consistent-type-imports': 'error',
     '@typescript-eslint/ban-ts-comment': [
       'error',
