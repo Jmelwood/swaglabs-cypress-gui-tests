@@ -94,9 +94,7 @@ describe('Checkout', () => {
   });
 
   it('Field information is required to checkout', () => {
-    InventoryPage.pickItemRandomly().then(($invItem1) => {
-      cy.wrap($invItem1).find('[data-test*="add-to-cart"]').click();
-    });
+    InventoryPage.pickItemRandomly().find('[data-test*="add-to-cart"]').click();
     HeaderModal.shoppingCartIcon.click();
     CartPage.checkoutButton.click();
     CheckoutPage.continueButton.click();
