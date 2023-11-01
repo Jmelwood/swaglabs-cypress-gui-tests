@@ -1,4 +1,4 @@
-import GeneralPage from './general.page.js';
+import GeneralPage from './common.page.js';
 
 class CartPage extends GeneralPage {
   constructor() {

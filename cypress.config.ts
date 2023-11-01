@@ -8,7 +8,6 @@ export default defineConfig({
   chromeWebSecurity: false,
   e2e: {
     baseUrl: 'https://www.saucedemo.com/',
-    testIsolation: false, // We can clear cart items within the website, don't want to lose cached login token
     specPattern: 'e2e/features/*.feature',
     async setupNodeEvents(
       on: Cypress.PluginEvents,

@@ -2,7 +2,7 @@
 
 ## Summary
 
-Automated end-to-end GUI tests for SauceLabs' ["SwagLabs"](https://saucedemo.com) test website, mainly to play around with a simple [Cypress](https://cypress.io) automation framework setup. Cypress is both the test runner and asserter, paired with the [Mocha](https://mochajs.org) test framework.
+Automated end-to-end GUI tests for SauceLabs' ["SwagLabs"](https://saucedemo.com) test website, mainly to play around with a simple [Cypress](https://cypress.io) automation framework setup. Cypress is both the test runner and asserter, paired with the [Cucumber](https://cucumber.io) test framework.
 
 ## Prerequisites
 
