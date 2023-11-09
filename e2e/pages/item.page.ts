@@ -33,20 +33,8 @@ class ItemPage extends GeneralPage {
     return cy.get(`button[data-test="remove-${itemId}"]`);
   }
 
-  /**
-   * Adds the specified item name to the shopping cart.
-   * @param itemId The item's id
-   */
-  clickAddToCart(itemId: string) {
-    this.addToCartButton(itemId).click();
-  }
-
-  /**
-   * Removes the specified item name from the shopping cart.
-   * @param itemId The item's id
-   */
-  clickRemoveFromCart(itemId: string) {
-    this.removeFromCartButton(itemId).click();
+  get removeFromCartButtonSelector() {
+    return 'button[data-test*="remove"]';
   }
 
   open(itemId: string) {

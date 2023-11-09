@@ -8,7 +8,9 @@ import CartPage from '../pages/cart.page.js';
 
 export interface CustomContext extends Mocha.Context {
   expectedItemNames: string[];
-  expectedItemPrices: number[];
+  expectedItemDescs: string[];
+  expectedItemPrices: Array<number | string>;
+  expectedItemImages: string[];
 }
 
 Given('I need to skip this test for now', () => {

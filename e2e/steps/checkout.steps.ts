@@ -13,11 +13,11 @@ Given('I randomly add {int} item(s) to my shopping cart', function (this: Custom
   for (let i = 0; i < itemAmt; i++) {
     InventoryPage.pickItemRandomly().then(($invItem) => {
       cy.wrap($invItem)
-        .find('div.inventory_item_name')
+        .find(InventoryPage.inventoryItemSelector)
         .then(($invItemName) => {
           if (!this.expectedItemNames.includes($invItemName.text())) {
             this.expectedItemNames.push($invItemName.text());
-            cy.wrap($invItem).find('[data-test*="add-to-cart"]').click();
+            cy.wrap($invItem).find(InventoryPage.addToCartButtonSelector).click();
           }
         });
       cy.wrap($invItem)
@@ -44,7 +44,7 @@ When('I click the finish button', () => {
 Then('I see all of the items I added from the inventory page', function (this: CustomContext) {
   CartPage.inventoryItems.then(($cartItems) => {
     cy.wrap($cartItems)
-      .find('div.inventory_item_name')
+      .find(InventoryPage.inventoryItemSelector)
       .then(($cartItemNames) => {
         const cartItemNames = $cartItemNames.toArray();
         for (const expectedItemName of this.expectedItemNames) {
@@ -70,7 +70,7 @@ Then('I will see an error message specifying that {string}', (errorMsg: string) 
 });
 
 Then('All the calculated amounts are accurate', function (this: CustomContext) {
-  const expectedSubtotal = this.expectedItemPrices.reduce((prev, curr) => prev + curr, 0);
+  const expectedSubtotal = (this.expectedItemPrices as number[]).reduce((prev, curr) => prev + curr, 0);
   const expectedTax = expectedSubtotal * 0.08;
   const expectedTotal = expectedSubtotal + expectedTax;
   CheckoutPage.subtotalLabel.should('contain.text', expectedSubtotal.toFixed(2));

@@ -21,16 +21,32 @@ class InventoryPage extends GeneralPage {
     return cy.get('div.inventory_item_img > a > img');
   }
 
+  get inventoryItemImageSelector() {
+    return 'div.inventory_item_img > a > img';
+  }
+
   get inventoryItemNames() {
     return cy.get('div.inventory_item_name');
+  }
+
+  get inventoryItemSelector() {
+    return 'div.inventory_item_name';
   }
 
   get inventoryItemDescriptions() {
     return cy.get('div.inventory_item_desc');
   }
 
+  get inventoryItemDescriptionSelector() {
+    return 'div.inventory_item_desc';
+  }
+
   get inventoryItemPrices() {
     return cy.get('div.inventory_item_price');
+  }
+
+  get inventoryItemPriceSelector() {
+    return 'div.inventory_item_price';
   }
 
   inventoryItemLink(itemName: string) {
@@ -41,12 +57,20 @@ class InventoryPage extends GeneralPage {
     super.open('inventory.html');
   }
 
+  get addToCartButtonSelector() {
+    return '[data-test*="add-to-cart"]';
+  }
+
   addToCartButton(itemId: string) {
     return cy.get(`[data-test="add-to-cart-${itemId}"]`);
   }
 
   removeFromCartButton(itemId: string) {
     return cy.get(`[data-test="remove-${itemId}"]`);
+  }
+
+  get removeFromCartButtonSelector() {
+    return 'button[data-test*="remove"]';
   }
 
   /**
@@ -57,22 +81,6 @@ class InventoryPage extends GeneralPage {
     return this.inventoryItems.then(($items) => {
       return Cypress._.sample($items.toArray());
     });
-  }
-
-  /**
-   * Adds the specified item name to the shopping cart.
-   * @param itemId The item's id
-   */
-  clickAddToCart(itemId: string) {
-    this.addToCartButton(itemId).click();
-  }
-
-  /**
-   * Removes the specified item name from the shopping cart.
-   * @param itemId The item's id
-   */
-  clickRemoveFromCart(itemId: string) {
-    this.removeFromCartButton(itemId).click();
   }
 }
 

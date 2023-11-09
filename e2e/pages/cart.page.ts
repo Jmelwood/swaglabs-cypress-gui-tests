@@ -13,6 +13,10 @@ class CartPage extends GeneralPage {
     return cy.get('div.inventory_item_name');
   }
 
+  get inventoryItemSelector() {
+    return 'div.inventory_item_name';
+  }
+
   inventoryItemLink(itemName: string) {
     return cy.get(`div=${itemName}`);
   }
@@ -29,13 +33,8 @@ class CartPage extends GeneralPage {
     return cy.get(`button[data-test="remove-${itemId}"]`);
   }
 
-  /**
-   * Removes the specified item name from the shopping cart.
-   * @param itemName - The name of the item to be removed.
-   */
-  clickRemoveFromCart(itemName: string) {
-    const itemId = itemName.replace(/\s/g, '-').toLowerCase();
-    this.removeFromCartButton(itemId).click();
+  get removeFromCartButtonSelector() {
+    return 'button[data-test*="remove"]';
   }
 
   open() {
