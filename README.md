@@ -11,6 +11,7 @@ Automated end-to-end GUI tests for SauceLabs' ["SwagLabs"](https://saucedemo.com
 
 ## How to run tests
 
-1. Clone this repository (`git clone https://github.com/Jmcosel/swaglabs-cypress-gui-tests.git`)
+1. Clone this repository (`git clone https://github.com/Jmelwood/swaglabs-cypress-gui-tests.git`)
 2. Navigate to the root of the folder and install the dependencies (`cd swaglabs-cypress-gui-tests && yarn`)
-3. Run all tests with the following command: `yarn test:headless`
+3. Run all tests (headless) with the following command: `yarn test`
+4. You can also run them headed with `yarn test:gui`
