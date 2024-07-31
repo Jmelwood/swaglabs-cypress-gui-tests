@@ -1,3 +1,10 @@
+export type Users = {
+  standard: User;
+  locked_out: User;
+  problem: User;
+  glitch: User;
+};
+
 export type User = {
   firstName: string;
   lastName: string;
@@ -5,6 +12,8 @@ export type User = {
   username: string;
   password: string;
 };
+
+export type UserType = keyof Users;
 
 export default {
   standard: {
@@ -35,4 +44,4 @@ export default {
     username: 'performance_glitch_user',
     password: 'secret_sauce'
   }
-};
+} as Users;

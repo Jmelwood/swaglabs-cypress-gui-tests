@@ -117,3 +117,6 @@ dist
 cypress/videos
 cypress/screenshots
 cypress/downloads
+
+# Test Reports
+reports/
