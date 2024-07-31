@@ -2,6 +2,7 @@ import { defineConfig } from 'cypress';
 import createBundler from '@bahmutov/cypress-esbuild-preprocessor';
 import { addCucumberPreprocessorPlugin } from '@badeball/cypress-cucumber-preprocessor';
 import { createEsbuildPlugin } from '@badeball/cypress-cucumber-preprocessor/esbuild';
+import { GenerateCtrfReport } from 'cypress-ctrf-json-reporter';
 
 export default defineConfig({
   watchForFileChanges: false,
@@ -22,6 +23,8 @@ export default defineConfig({
           plugins: [createEsbuildPlugin(config)]
         })
       );
+
+      new GenerateCtrfReport({on, outputDir: 'reports'})
 
       // Make sure to return the config object as it might have been modified by the plugin.
       return config;
